@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -43,10 +44,12 @@ public class CreateAccountActivity extends AppCompatActivity {
 
 
     void createAccount() {
-        String email = emailEditText.toString();
-        String password = passwordEditText.toString();
-        String confirmPassword = confirmPasswordEditText.toString();
+        String email = emailEditText.getText().toString();
+        String password = passwordEditText.getText().toString();
+        String confirmPassword = confirmPasswordEditText.getText().toString();
+        Log.i("email",email + " " +password + " " + confirmPassword);
         boolean isValidated = validateData(email, password, confirmPassword);
+
         if (!isValidated) {
             return;
         }
@@ -60,12 +63,17 @@ public class CreateAccountActivity extends AppCompatActivity {
         firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(CreateAccountActivity.this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
+                changeInProgress(false);
                 if(task.isSuccessful()){
                     //set task is done.
-                    Toast.makeText(CreateAccountActivity.this, "Welcome adventure", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CreateAccountActivity.this, "Welcome adventure, Please sign your email note", Toast.LENGTH_SHORT).show();
                     firebaseAuth.getCurrentUser().sendEmailVerification();
+                    // login
+                    firebaseAuth.signOut();
+                    finish();
                 } else {
                     //failure
+                    Toast.makeText(CreateAccountActivity.this, task.getException().getLocalizedMessage(), Toast.LENGTH_SHORT).show();
                 }
             }
         });
