@@ -6,4 +6,7 @@
     <color name="my_primary">#B9F48836</color>
     <color name="teal_200">#F4DC05</color>
     <color name="teal_700">#E6B31B</color>
+    <color name="danger">#C1564C</color>
+    <color name="confirm">#359B5D</color>
+    <color name="cancel">#FD8B7D</color>
 </resources>
