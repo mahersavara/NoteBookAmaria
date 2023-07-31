@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "754488905902",
+    "project_id": "notebookamaria",
+    "storage_bucket": "notebookamaria.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:754488905902:android:60bb6cab446b2c6b379d3f",
+        "android_client_info": {
+          "package_name": "com.khuatlinh.notebookamaria"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "754488905902-b3m9u0d3u9ldshulchas6v28741pqdjv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsvXUGtCu5jr71typtgdiN4f-N1aH_Yak"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "754488905902-b3m9u0d3u9ldshulchas6v28741pqdjv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
