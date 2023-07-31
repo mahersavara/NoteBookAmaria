@@ -66,14 +66,14 @@ public class CreateAccountActivity extends AppCompatActivity {
                 changeInProgress(false);
                 if(task.isSuccessful()){
                     //set task is done.
-                    Toast.makeText(CreateAccountActivity.this, "Welcome adventure, Please sign your email note", Toast.LENGTH_SHORT).show();
+                    Utility.showToast(CreateAccountActivity.this, "Welcome adventure, Please sign your email note");
                     firebaseAuth.getCurrentUser().sendEmailVerification();
                     // login
                     firebaseAuth.signOut();
                     finish();
                 } else {
                     //failure
-                    Toast.makeText(CreateAccountActivity.this, task.getException().getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                    Utility.showToast(CreateAccountActivity.this, task.getException().getLocalizedMessage());
                 }
             }
         });
