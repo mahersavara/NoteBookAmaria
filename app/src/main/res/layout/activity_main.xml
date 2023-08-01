@@ -7,6 +7,45 @@
     tools:context=".MainActivity"
     android:background="@color/my_primary">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/title_bar_layout"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/page_title"
+            android:text="Your Life Notes"
+            android:textSize="32dp"
+            android:layout_marginLeft="5dp"
+            android:saveEnabled="true"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif"
+            />
+        <ImageButton
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:id="@+id/menu_btn"
+            android:src="@drawable/baseline_menu_book_24"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            app:tint="@color/danger"
+            android:background="@drawable/rounded_white_conner"/>
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/recycle_view"
+        android:layout_below="@id/title_bar_layout"/>
+
+
+
+
 <com.google.android.material.floatingactionbutton.FloatingActionButton
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"

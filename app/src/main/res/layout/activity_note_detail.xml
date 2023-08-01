@@ -18,6 +18,7 @@
             android:id="@+id/page_title"
             android:text="Add a new Journy"
             android:textSize="32dp"
+            android:layout_marginLeft="5dp"
             android:saveEnabled="true"
             android:textColor="@color/white"
             android:textStyle="bold"
@@ -27,11 +28,12 @@
             android:layout_width="36dp"
             android:layout_height="36dp"
             android:id="@+id/save_note_btn"
-            android:src="@drawable/baseline_verified_24"
+            android:src="@drawable/twotone_done_outline_24"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
             app:tint="@color/confirm"
-            android:background="?attr/selectableItemBackgroundBorderless"/>
+            android:background="@drawable/rounded_white_conner"/>
 
 
 
