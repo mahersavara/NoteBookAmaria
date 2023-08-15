@@ -9,4 +9,10 @@
     <color name="danger">#C1564C</color>
     <color name="confirm">#359B5D</color>
     <color name="cancel">#FD8B7D</color>
+    <color name="purple">#AB6C9A</color>
+    <color name="purple2">#756491</color>
+    <color name="blue">#485879</color>
+    <color name="dark_blue">#2F4858</color>
+    <color name="lesser_green">#94B75D</color>
+
 </resources>
