@@ -5,12 +5,16 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.ImageButton;
 import android.widget.PopupMenu;
 
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.ads.nativetemplates.NativeTemplateStyle;
+import com.google.android.ads.nativetemplates.TemplateView;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdLoader;
 import com.google.android.gms.ads.LoadAdError;
@@ -40,6 +44,16 @@ public class MainActivity extends AppCompatActivity {
         addNoteBtn.setOnClickListener((v)->startActivity(new Intent(MainActivity.this,NoteDetailActivity.class)) );
         menuBtn.setOnClickListener((v) -> showMenu());
         setupRecyclerView();
+
+
+        NativeTemplateStyle styles = new NativeTemplateStyle.Builder().withMainBackgroundColor(new ColorDrawable(Color.BLACK))
+                .withPrimaryTextBackgroundColor(new ColorDrawable(MainActivity.this.getColor(R.color.my_primary)))
+                .withTertiaryTextBackgroundColor(new ColorDrawable(MainActivity.this.getColor(R.color.purple)))
+                .withCallToActionBackgroundColor(new ColorDrawable(MainActivity.this.getColor(R.color.my_primary)))
+                .build();
+        TemplateView templateView = findViewById(R.id.my_template);
+        Utility.loadNativeAds(MainActivity.this,styles,templateView);
+        // other change can be refer to here for more information ( which override the xml file
 
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override

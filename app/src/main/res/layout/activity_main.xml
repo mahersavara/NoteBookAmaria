@@ -37,6 +37,8 @@
 
     </RelativeLayout>
 
+
+
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -51,9 +53,18 @@
     android:layout_height="wrap_content"
     android:backgroundTint="@color/white"
     android:layout_alignParentEnd="true"
-    android:layout_alignParentBottom="true"
+    android:layout_marginBottom="20sp"
+    android:layout_above="@+id/my_template"
     android:id="@+id/addNoteBtn"
     android:src="@drawable/baseline_add_24"/>
+
+    <com.google.android.ads.nativetemplates.TemplateView
+        android:id="@+id/my_template"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        app:gnt_template_type="@layout/gnt_small_template_view" />
 
 
 </RelativeLayout>
